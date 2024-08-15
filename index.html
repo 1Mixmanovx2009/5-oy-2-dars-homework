@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title> 
+  <link rel="stylesheet" href="./css/main.css">
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="py-5 shadow-lg flex item-center justify-between px-5 ">
+    <h1>Countrys List</h1>
+    <div class="flex item-center gap-5">
+      <button class="heart w-[40px] h-[40px] flex items-center rounded-[50%] border-[2px]">
+        <span class="heart__span">0</span>
+        <img src="./images/heart.svg" alt="Like img" width="16" height="16">
+      </button>
+      <button class="saved w-[40px] h-[40px] flex items-center rounded-[50%] border-[2px]">
+        <span class="saved__span">0</span>
+        <img src="./images/saved.svg" alt="" width="25" height="27">
+      </button>
+      <button class="mode w-[40px] h-[40px] flex items-center rounded-[50%] border-[1px] border-black">
+        <img src="./images/mode-dark.svg" alt="" width="20" height="10">
+      </button>
+    </div> 
+  </header>
+  <main>
+    <section>
+      <div>
+        <form class="flex justify-between px-10 mb-[40px] pt-[50px]">
+          <input class="search-input border-[2px] border-grey p-[10px] rounded-[12px]" type="text" placeholder="Searching...">
+          <select class="select border-[2px] border-grey p-[10px] rounded-[12px]" name="countrys" id="countrys">
+            <option value="Wallis and Futuna">Wallis and Futuna</option>
+            <option value="Iceland">Iceland</option>
+            <option value="Luxembourg">Luxembourg</option>
+            <option value="Mali">Mali</option>
+            <option value="Comoros">Comoros</option>
+            <option value="Australia">Australia</option>
+            <option value="Estonia">Estonia</option>
+            <option value="Canada">Canada</option>
+            <option value="Belarus">Belarus</option>
+            <option value="Guyana">Guyana</option>
+          </select>
+        </form>
+        
+      </div>
+    </section>
+    <section class="cards">
+      <ul class="List flex justify-between flex-wrap px-10 gap-[40px] mb-[20px]">
+      </ul>
+    </section>
+  </main>
+  
+  
+  <script src="./js/main.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>
+

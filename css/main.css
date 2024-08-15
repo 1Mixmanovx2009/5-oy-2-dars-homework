@@ -1,0 +1,48 @@
+header {
+    margin-bottom: 50px;
+    background-color: white;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.heart {
+    border-color: red;
+}
+
+.heart>img {
+    color: red;
+}
+
+.heart__span {
+    padding-left: 5px;
+    padding-right:2px;
+    color: red;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.saved {
+    border-color: green;
+}
+
+.saved__span {
+    font-size: 16px;
+    font-weight: 500;
+    padding-left: 3px;
+    color:  green;
+}
+
+.mode {
+    padding-left: 10px;
+}
+
+main {
+    background-color: gray;
+}
+
+.flag {
+    object-fit: contain;
+}
