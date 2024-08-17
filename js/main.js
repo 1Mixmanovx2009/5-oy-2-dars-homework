@@ -1,5 +1,8 @@
 let wrapper = document.querySelector(".List")
 let searchInput = document.querySelector(".search-input")
+let mode = document.querySelector(".mode")
+let more = document.getElementById(".more")
+let main = document.querySelector("main")
 let select = document.querySelector(".select")
 
 const countrys = [
@@ -79,7 +82,7 @@ function renderUsers(arr) {
     wrapper.innerHTML = null 
     arr.map(item => { 
         let userItem = document.createElement("li") 
-        userItem.className = "list w-[300px] p-5 bg-gray-200 rounded-lg bsh-[5px 5px 10px 10px]" 
+        userItem.className = " w-[300px] p-5 bg-var(--card_bg); rounded-lg bsh-[5px 5px 10px 10px]" 
         userItem.innerHTML = 
         `
         <img  class="flag" src="${item.flag}" alt="">
@@ -88,18 +91,22 @@ function renderUsers(arr) {
         <p>Population: ${item.population}</p>
         <p>ID: ${item.id}</p>
         <div class="flex gap-[8px]">
-         <a href="/">
-        <img class="bg-white mt-[20px] p-[4px] rounded-[12px]" src="./images/heart-white (2).svg" alt="" width="35" height="10">
-        </a>
-        <a href="/">
-        <img class="bg-white mt-[20px] p-[2px] rounded-[12px]" src="./images/save.svg" alt="" width="35" height="10">
-        </a>
-        </a>
-        <a href="/">
-        <img class="bg-white mt-[20px] p-[2px] rounded-[12px]" src="./images/more.svg" alt="" width="35" height="10">
-        </a>
+             <a href="/">
+                <img class="card_icon bg-white mt-[20px] p-[4px] rounded-[12px]" src="./images/heart-white (2).svg" alt="" width="35" height="10">
+            </a>
+            <a href="/">
+                <img class="card_icon bg-white mt-[20px] p-[2px] rounded-[12px]" src="./images/save.svg" alt="" width="35" height="10">
+            </a>
+            <a href="/">
+                <img class="more card_icon bg-white mt-[20px] p-[2px] rounded-[12px]" src="./images/more.svg" alt="" width="35" height="10">
+            </a>
         </div>
-       
+        <div class="position-absolute  left-[0] top-[0] hidden">
+            <h2>Country: ${item.name}</h2>
+            <p>Capital:${item.capital}</p>
+            <p>Population: ${item.population}</p>
+            <p>ID: ${item.id}</p>
+        </div>
         ` 
         wrapper.appendChild(userItem)
     })
@@ -109,13 +116,17 @@ renderUsers(countrys)
 searchInput.addEventListener("keyup",function(evt){
     const searchValue = evt.target.value.toLowerCase()
     const filteredUsers = countrys.filter(item => item.name.toLowerCase().includes(searchValue))
-
+    const filteredCapital = countrys.filter(item => item.capital.toLowerCase().includes(searchValue))
+    
     renderUsers(filteredUsers)
+    renderUsers(filteredCapital)
+
 })
 
-select.addEventListener("keyup",function(evt){
-    const searchValue = evt.target.value
-    const filteredUsers = countrys.filter(item => item.name.includes(searchValue))
 
-    renderUsers(filteredUsers)
+mode.addEventListener('click', () => {
+    main.classListenner.add('.color_dark')
 })
+
+
+

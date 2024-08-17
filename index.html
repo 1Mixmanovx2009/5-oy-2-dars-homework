@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title> 
-  <link rel="stylesheet" href="./css/main.css">
   <style type="text/tailwindcss">
     @layer utilities {
       .content-auto {
@@ -12,6 +11,7 @@
       }
     }
   </style>
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
   <header class="py-5 shadow-lg flex item-center justify-between px-5 ">
@@ -25,7 +25,7 @@
         <span class="saved__span">0</span>
         <img src="./images/saved.svg" alt="" width="25" height="27">
       </button>
-      <button class="mode w-[40px] h-[40px] flex items-center rounded-[50%] border-[1px] border-black">
+      <button  id="mode"class="mode w-[40px] h-[40px] flex items-center rounded-[50%] border-[1px] border-black pl-[10px]">
         <img src="./images/mode-dark.svg" alt="" width="20" height="10">
       </button>
     </div> 
