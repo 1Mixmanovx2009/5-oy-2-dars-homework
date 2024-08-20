@@ -14,49 +14,52 @@
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-  <header class="py-5 shadow-lg flex item-center justify-between px-5 ">
+  <header class="py-5 shadow-2xl flex item-center justify-between px-5 ">
     <h1>Countrys List</h1>
     <div class="flex item-center gap-5">
-      <button class="heart w-[40px] h-[40px] flex items-center rounded-[50%] border-[2px]">
+      <button class="heart w-[40px] h-[40px] flex items-center bg-white rounded-[50%] border-[2px]">
         <span class="heart__span">0</span>
         <img src="./images/heart.svg" alt="Like img" width="16" height="16">
       </button>
-      <button class="saved w-[40px] h-[40px] flex items-center rounded-[50%] border-[2px]">
+      <button class="saved w-[40px] h-[40px] flex items-center bg-white rounded-[50%] border-[2px]">
         <span class="saved__span">0</span>
         <img src="./images/saved.svg" alt="" width="25" height="27">
       </button>
-      <button  id="mode"class="mode w-[40px] h-[40px] flex items-center rounded-[50%] border-[1px] border-black pl-[10px]">
+      <button  id="mode"class="mode-night w-[40px] h-[40px] flex items-center bg-white rounded-[50%] border-[1px] border-black pl-[10px]">
         <img src="./images/mode-dark.svg" alt="" width="20" height="10">
+      </button>
+      <button class="mode-light w-[40px] h-[40px] flex items-center hidden rounded-[50%] border-[1px] border-black pl-[5px]">
+        <img src="./images/mode-light.svg" alt="" width="30px" height="30px">
       </button>
     </div> 
   </header>
   <main>
     <section>
       <div>
-        <form class="flex justify-between px-10 mb-[40px] pt-[50px]">
-          <input class="search-input border-[2px] border-grey p-[10px] rounded-[12px]" type="text" placeholder="Searching...">
-          <select class="select border-[2px] border-grey p-[10px] rounded-[12px]" name="countrys" id="countrys">
-            <option value="Wallis and Futuna">Wallis and Futuna</option>
-            <option value="Iceland">Iceland</option>
-            <option value="Luxembourg">Luxembourg</option>
-            <option value="Mali">Mali</option>
-            <option value="Comoros">Comoros</option>
-            <option value="Australia">Australia</option>
-            <option value="Estonia">Estonia</option>
-            <option value="Canada">Canada</option>
-            <option value="Belarus">Belarus</option>
-            <option value="Guyana">Guyana</option>
+        <form class="flex justify-between px-10 mb-[40px] pt-[100px] bc-">
+          <input class="search-input border-[2px] border-gray-400 p-[10px] rounded-[12px]" type="text" placeholder="Searching...">
+          <select class="count-select w-[150px] border-[2px] border-gray-400 p-[10px] rounded-[12px]" name="countrys" id="countrys">
+            <option value="all">All</option>
           </select>
         </form>
         
       </div>
     </section>
     <section class="cards">
-      <ul class="List flex justify-between flex-wrap px-10 gap-[40px] mb-[20px]">
+      <ul class="List flex justify-between flex-wrap px-10 gap-[40px] pb-[20px]">
       </ul>
     </section>
   </main>
   
+
+  <div id="wrapper" class="modal-wrapper fixed top-0 bottom-0 left-0 right-0 backdrop-blur duration-300 scale-0">
+    <div class="modal-inner absolute w-[650px] h-[400px] bg-gray-400 top-0 bottom-0 left-0 right-0 m-auto mt-[100px] shadow-lg rounded-lg">
+      <button  onclick="closeBtnClick()" class="absolute top-0 right-0">
+        <img class=" top-0 right-0" src="./images/close.svg" alt="" width="40px" height="40px">
+      </button>
+      <div class="modal-content"><img src="./images/heart-white (2).svg" alt=""></div>
+    </div>
+  </div>
   
   <script src="./js/main.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
